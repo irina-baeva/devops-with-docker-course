@@ -67,3 +67,37 @@ Input website: helsinki.fi
 
 ![1.4: Missing dependencies](../assets/exercise-1-4.png)
 
+### 1.5: Sizes of images
+
+>In a previous exercise we used devopsdockeruh/simple-web-service:ubuntu. Here is the same application but instead of ubuntu is using alpine: devopsdockeruh/simple-web-service:alpine. Pull both images and compare the image sizes. Go inside the alpine container and make sure the secret message functionality is the same. Alpine version doesn’t have bash but it has sh.
+
+```
+docker pull devopsdockeruh/simple-web-service:alpine
+docker images 
+```
+![1.5: Sizes of images](../assets/exercise-1-5.png)
+
+```
+docker run -d -it --name get-secret-alpine devopsdockeruh/simple-web-service:alpine
+docker exec -it get-secret-alpine sh 
+```
+inside the container run
+```
+tail -f ./text.log
+```
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
+![1.5: Secret](../assets/exercise-1-5-2.png)
+
+### 1.6: Hello Docker Hub
+
+>Run docker run -it devopsdockeruh/pull_exercise. It will wait for your input. Navigate through docker hub to find the docs and Dockerfile that was used to create the image. Read the Dockerfile and/or docs to learn what input will get the application to answer a “secret message”.
+
+```
+docker run -it devopsdockeruh/pull_exercise
+```
+Secret message is: "This is the secret message"
+![1.6: Hello Docker Hub](../assets/exercise-1-6.png)
+
+
+
