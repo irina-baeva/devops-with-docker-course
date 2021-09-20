@@ -117,3 +117,13 @@ docker run web-server
 docker build . -t curler
 docker run -it curler   
 ```
+
+### 1.9: Volumes
+> Image devopsdockeruh/simple-web-service creates a timestamp every two seconds to /usr/src/app/text.log when it’s not given a command. Start the container with bind mount so that the logs are created into your filesystem.
+
+```
+mkdir mydir
+touch mydir/text.log
+docker run -v $(pwd)/mydir/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service:ubuntu
+```
+[Output text](./mydir/text.log)
