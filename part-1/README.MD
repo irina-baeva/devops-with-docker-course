@@ -163,3 +163,14 @@ docker run -p 5000:5000  example-frontend
 
 message of browser:
 Exercise 1.12: Congratulations! You configured your ports correctly!
+
+### 1.13: Hello, backend!
+> Clone, fork or download a project from https://github.com/docker-hy/material-applications/tree/main/example-backend. Create a Dockerfile for the project (example-backend) and give a command so that the project runs in a docker container with port 8080 published. When you start the container and navigate to http://localhost:8080/ping you should get a “pong” as response.
+
+```
+docker build . -t example-backend
+docker run -p 8080:8080  example-backend
+```
+[Dockerfile](./exercise-1-13/Dockerfile)
+
+message of http://localhost:8080/ping: pong
