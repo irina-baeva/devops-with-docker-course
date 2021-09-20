@@ -127,3 +127,27 @@ touch mydir/text.log
 docker run -v $(pwd)/mydir/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service:ubuntu
 ```
 [Output text](./mydir/text.log)
+
+
+### 1.10: Ports open
+> Image devopsdockeruh/simple-web-service will start a web service in port 8080 when given the command “server”. From 1.7 you should have an image ready for this. Use -p flag to access the contents with your browser. The output to your browser should be something like: { message: "You connected to the following path: ...
+
+```
+docker run -p 8080:8080  web-server
+```
+output of browser
+```json
+{
+"message": "You connected to the following path: /",
+"path": "/"
+}
+```
+
+### 1.11: Spring
+> Lets create a Dockerfile for a Java Spring project: github page. The setup should be straightforward with the README instructions. Tips to get you started: Use openjdk image FROM openjdk:_tag_ to get java instead of installing it manually. Pick the tag by using the README and dockerhub page.
+
+```
+docker build . -t spring-project
+docker run -p 8080:8080 spring-project
+```
+[Dockerfile](./exercise-1-11/Dockerfile)
