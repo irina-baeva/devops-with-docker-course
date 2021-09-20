@@ -99,5 +99,21 @@ docker run -it devopsdockeruh/pull_exercise
 Secret message is: "This is the secret message"
 ![1.6: Hello Docker Hub](../assets/exercise-1-6.png)
 
+### 1.7: Two line Dockerfile
+> Create a Dockerfile and use FROM and CMD to create a brand new image that automatically runs the server. Tag the new image as “web-server”
 
+[Dockerfile](./exercise-1-7/Dockerfile)
 
+```
+docker build . -t web-server
+docker run web-server
+```
+### 1.8: Image for script
+> Create a Dockerfile for a new image that starts from ubuntu:18.04. Make a script file on you local machine with such content as echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;. Transfer this file to an image and run it inside the container using CMD. Build the image with tag “curler”. Run the new curler image with the correct flags and input helsinki.fi into it. Output should match the 1.4 one.
+
+[Dockerfile](./exercise-1-8/Dockerfile)
+
+```
+docker build . -t curler
+docker run -it curler   
+```
