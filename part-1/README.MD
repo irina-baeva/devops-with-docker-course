@@ -175,7 +175,7 @@ docker run -p 8080:8080  example-backend
 
 message of http://localhost:8080/ping: pong
 
-### 1.14: 1.14: Environment
+### 1.14: Environment
 
 Added to backend Dockerfile
 ```
@@ -194,4 +194,11 @@ docker build . -t example-frontend
 docker run -p 5000:5000  example-frontend
 ```
 [Dockerfile FE](./exercise-1-14/FE/Dockerfile)
+
 [Dockerfile BE](./exercise-1-14/BE/Dockerfile)
+
+1.15: Homework
+
+[Link to README and the project](https://github.com/some-otter-thing/keepTheBoxGreen-api)
+
+[Link to docker hub](https://hub.docker.com/repository/docker/irinabaeva/keeptheboxgreen-api-docker)
