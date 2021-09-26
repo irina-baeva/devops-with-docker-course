@@ -202,3 +202,16 @@ docker run -p 5000:5000  example-frontend
 [Link to README and the project](https://github.com/some-otter-thing/keepTheBoxGreen-api)
 
 [Link to docker hub](https://hub.docker.com/repository/docker/irinabaeva/keeptheboxgreen-api-docker)
+
+1.16: Heroku
+>Pushing to heroku happens in a similar way. A project has already been prepared at devopsdockeruh/heroku-example so lets pull that first. 
+
+```
+docker pull devopsdockeruh/heroku-example
+docker tag devopsdockeruh/heroku-example registry.heroku.com/devops-with-docker/web
+heroku login 
+heroku container:login   
+docker push registry.heroku.com/devops-with-docker/web
+heroku container:release web --app devops-with-docker 
+```
+[Link to Heroku](https://devops-with-docker.herokuapp.com/presses/new)
