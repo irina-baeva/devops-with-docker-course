@@ -174,3 +174,24 @@ docker run -p 8080:8080  example-backend
 [Dockerfile](./exercise-1-13/Dockerfile)
 
 message of http://localhost:8080/ping: pong
+
+### 1.14: 1.14: Environment
+
+Added to backend Dockerfile
+```
+ENV REQUEST_ORIGIN=http://localhost:5000
+```
+Added to frontend Dockerfile
+```
+ENV REACT_APP_BACKEND_URL=http://localhost:8080
+```
+Then run both
+```
+docker build . -t example-backend
+docker run -p 8080:8080  example-backend
+
+docker build . -t example-frontend
+docker run -p 5000:5000  example-frontend
+```
+[Dockerfile FE](./exercise-1-14/FE/Dockerfile)
+[Dockerfile BE](./exercise-1-14/BE/Dockerfile)
